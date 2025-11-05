@@ -15,6 +15,17 @@ public class ControlVersiones_JimmyGarcia {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        double[] notas = {85, 93, 78, 91};
+        double promedio = calcularPromedio(notas);
+        System.out.println("El promedio es: " + promedio);
+    }
+    
+    public static double calcularPromedio(double[] numeros) {
+    double suma = 0;
+    for (double num : numeros) {
+        suma += num;
+    }
+    return suma / numeros.length;
     }
     
 }
