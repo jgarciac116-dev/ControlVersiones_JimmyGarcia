@@ -4,6 +4,8 @@
  */
 package controlversiones_jimmygarcia;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Jimmy
@@ -15,9 +17,24 @@ public class ControlVersiones_JimmyGarcia {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        double[] notas = {85, 93, 78, 91};
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("=== Calculadora de Promedios ===");
+        System.out.print("¿Cuántas notas desea ingresar? ");
+        int cantidad = scanner.nextInt();
+
+        if (cantidad <= 0) {
+            System.out.println("Error: Debe ingresar al menos una nota.");
+            return;
+        }
+
+        double[] notas = new double[cantidad];
+        for (int i = 0; i < cantidad; i++) {
+            System.out.print("Ingrese nota " + (i + 1) + ": ");
+            notas[i] = scanner.nextDouble();
+        }
+
         double promedio = calcularPromedio(notas);
-        System.out.println("El promedio es: " + promedio);
+        System.out.println("El promedio final es: " + promedio);
     }
     
     public static double calcularPromedio(double[] numeros) {
